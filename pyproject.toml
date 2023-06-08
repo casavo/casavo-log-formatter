@@ -1,0 +1,56 @@
+[project]
+name = "casavo-log-formatter"
+dynamic = ["version"]
+description = "A pre-configured JSON formatter for the Casavo logging format"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE.txt"}
+keywords = ["casavo", "logging", "json"]
+authors = [{name = "Casavo", email = "tech.internals@casavo.com"}]
+maintainers = [{name = "Casavo", email = "tech.internals@casavo.com"}]
+dependencies = []
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Topic :: System :: Logging",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.optional-dependencies]
+orjson = ["orjson"]
+dev = ["pip-tools", "black", "ruff", "orjson", "pre-commit", "isort", "nox", "build", "twine"]
+
+[project.urls]
+"Homepage" = "https://github.com/casavo/casavo-log-formatter"
+"Bug Reports" = "https://github.com/casavo/casavo-log-formatter/issues"
+"Source" = "https://github.com/casavo/casavo-log-formatter"
+
+[tool.black]
+line-length = 105
+target-version = ["py39", "py310", "py311"]
+
+[tool.isort]
+line_length = 105
+profile = "black"
+
+[tool.ruff]
+select = ["E", "W", "F"]
+ignore = ["E203", "E501", "F722"]
+line-length = 105
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "casavo_log_formatter.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

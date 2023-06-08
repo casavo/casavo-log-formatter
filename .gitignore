@@ -1,0 +1,14 @@
+build/
+dist/
+*.egg-info/
+*.egg
+*.py[cod]
+__pycache__/
+*.so
+*~
+.python-version
+.DS_Store
+.idea
+.venv
+.ruff_cache
+.nox
