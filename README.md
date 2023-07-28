@@ -1,4 +1,4 @@
-# casavo-logger
+# casavo-log-formatter
 
 An utility library that exposes a pre-configured log formatter for the Casavo JSON logging format.
 
