@@ -2,6 +2,10 @@
 
 An utility library that exposes a pre-configured log formatter for the Casavo JSON logging format.
 
+## Installation
+
+`pip install casavo-log-formatter`, or `pip install casavo-log-formatter[orjson]` if you prefer using `orjson` as a json serializer.
+
 ## Usage
 
 Referring to https://docs.python.org/3/library/logging.config.html#logging-config-dictschema,
