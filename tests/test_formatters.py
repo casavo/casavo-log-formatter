@@ -289,3 +289,14 @@ class SerializersTest(TestCase):
         self.assertEqual(stdlib, expected_result)
         self.assertEqual(orjson, expected_result)
         self.assertEqual(stdlib, orjson)
+
+    def test_string_serialization_of_a_multiple_keys_object_has_no_spaces(self):
+        test_data = {"a": 1, "b": 2}
+        expected_result = '{"a":1,"b":2}'
+
+        stdlib = _stdlib_serializer(test_data)
+        orjson = _orjson_serializer(test_data)
+
+        self.assertEqual(stdlib, expected_result)
+        self.assertEqual(orjson, expected_result)
+        self.assertEqual(stdlib, orjson)

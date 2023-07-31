@@ -83,4 +83,5 @@ def _stdlib_serializer(obj):
         obj,
         default=default_serializer,
         ensure_ascii=False,
+        separators=(",", ":"),
     )
